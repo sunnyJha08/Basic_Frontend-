@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Units Demo</title>
+  <style>
+    :root {
+      font-size: 16px; /* 1rem = 16px */
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    .box {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #333;
+      background-color: #e1e1ff;
+    }
+
+    .px-box {
+      width: 200px;
+      font-size: 16px;
+    }
+
+    .rem-box {
+      width: 15rem; /* 15 * 16px = 240px */
+      font-size: 1.5rem; /* 24px */
+    }
+
+    .em-box {
+      font-size: 1.5em; /* 1.5 * parent font-size */
+      width: 20em; /* width based on this element's font size */
+    }
+
+    .percent-box {
+      width: 50%; /* relative to container width */
+      font-size: 100%; /* same as parent */
+    }
+
+    .vh-box {
+      height: 20vh; /* 20% of viewport height */
+      width: 50vw; /* 50% of viewport width */
+      font-size: 2vh; /* relative to viewport height */
+      background-color: #d0f0d0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box px-box">📏 <strong>px:</strong> Width: 200px, Font size: 16px (fixed)</div>
+    <div class="box rem-box">🔤 <strong>rem:</strong> Width: 15rem, Font size: 1.5rem (root-relative)</div>
+    <div class="box em-box">🔠 <strong>em:</strong> Width: 20em, Font size: 1.5em (relative to itself)</div>
+    <div class="box percent-box">📐 <strong>%:</strong> Width: 50% of container</div>
+    <div class="box vh-box">🖥️ <strong>vh & vw:</strong> Width: 50vw, Height: 20vh, Font size: 2vh</div>
+  </div>
+
+</body>
+</html>
+
+<!-- 🔍 Explanation of Units Used
+
+| Unit  | Meaning & Behavior                                                                |
+| ----- | --------------------------------------------------------------------------------- |
+| `px`  | Absolute size. Not relative to anything.                                          |
+| `rem` | Relative to the **root element**’s font size (usually set in `:root` or `html`).  |
+| `em`  | Relative to the **element’s own or parent’s** font size.                          |
+| `%`   | Relative to the **parent container’s** dimensions (for width, height, font-size). |
+| `vh`  | Relative to **1% of viewport height**.                                            |
+| `vw`  | Relative to **1% of viewport width**.                                             | 
+
+| Use Case         | Recommended Unit |
+| ---------------- | ---------------- |
+| Font Size        | `rem` `em`       |
+| Padding/Margin   | `em``rem`(or `%`)|
+| Component Widths | `%`, `vw`, `rem` |
+| Full Page Layout | `vh`, `vw`       |
+| Borders, Shadows | `px`             |
+-->

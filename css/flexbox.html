@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Flex container */
+    .flex-container {
+      display: flex;               /* Enables flexbox layout */
+      flex-direction: row;         /* Arrange items in a row (horizontal) */
+      justify-content: space-between; /* Space between the items */
+      align-items: center;         /* Vertically align items in the center */
+      border: 2px solid #444;
+      padding: 10px;
+      height: 150px;
+      background-color: #f4f4f4;
+    }
+
+    /* Flex items */
+    .flex-item {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 18px;
+      flex: 1;                    /* Each item takes equal space */
+      margin: 5px;                /* Space between items */
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>CSS Flexbox Layout</h2>
+
+  <div class="flex-container">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+  </div>
+
+</body>
+</html>
+
+<!-- 🔍 Key Properties Explained
+| Property          | What It Does                              |
+| ----------------- | ----------------------------------------- |
+| `display: flex`   | Turns a container into a flex container   |
+| `flex-direction`  | Defines the direction (row, column, etc.) |
+| `justify-content` | Aligns items along the **main axis**      |
+| `align-items`     | Aligns items along the **cross axis**     |
+| `flex: 1`         | Makes all items grow/shrink equally       |
+| `margin`          | Adds space between items                  |
+
+🛠 Flex Direction Options:
+row (default): left to right
+
+row-reverse: right to left
+
+column: top to bottom
+
+column-reverse: bottom to top -->
