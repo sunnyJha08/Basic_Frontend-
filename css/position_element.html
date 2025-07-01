@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive CSS Positioning</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .controls {
+      padding: 10px;
+      background-color: #f0f0f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #ccc;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .container {
+      position: relative;
+      height: 400px;
+      border: 2px solid #333;
+      margin: 20px;
+      background-color: #fafafa;
+    }
+
+    .box {
+      padding: 10px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .static-box {
+      position: static;
+      background-color: lightgray;
+    }
+
+    .relative-box {
+      position: relative;
+      top: 20px;
+      left: 20px;
+      background-color: lightblue;
+    }
+
+    .absolute-box {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: salmon;
+    }
+
+    .fixed-box {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: lightgreen;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Control buttons to toggle each box -->
+  <div class="controls">
+    <strong>Toggle Boxes:</strong>
+    <button onclick="toggleBox('static-box')">Static</button>
+    <button onclick="toggleBox('relative-box')">Relative</button>
+    <button onclick="toggleBox('absolute-box')">Absolute</button>
+    <button onclick="toggleBox('fixed-box')">Fixed</button>
+  </div>
+
+  <!-- Container for positioned boxes -->
+  <div class="container">
+    <div class="box static-box">Static Position</div>
+    <div class="box relative-box">Relative Position</div>
+    <div class="box absolute-box">Absolute Position</div>
+  </div>
+
+  <!-- Fixed box is outside container to demonstrate behavior -->
+  <div class="box fixed-box">Fixed Position</div>
+
+  <script>
+    // Toggle visibility by adding/removing the 'hidden' class
+    function toggleBox(className) {
+      const element = document.querySelector('.' + className);
+      element.classList.toggle('hidden');
+    }
+  </script>
+
+</body>
+</html>
